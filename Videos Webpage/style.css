@@ -1,0 +1,78 @@
+/* Full screen background */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #4CAF50, #2196F3, #FF5722);
+  background-size: 600% 600%;
+  animation: gradientShift 12s ease infinite;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Gradient animation */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Main container */
+.container {
+  width: 95%;
+  max-width: 1200px;
+  margin: 20px auto;
+  background: rgba(0,0,0,0.4);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  color: #fff;
+}
+
+/* Title */
+h1 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #fff;
+}
+
+/* Video grid */
+.video-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+/* Video cards */
+.video-card {
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.6);
+}
+
+/* Video player */
+video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  h1 { font-size: 1.6rem; }
+  .video-gallery { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 1.3rem; }
+  .video-gallery { grid-template-columns: 1fr; }
+}

@@ -3,27 +3,24 @@ body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    background: linear-gradient(135deg, #4CAF50, #2196F3, #FF5722);
+    background: linear-gradient(135deg, #717471, #2196F3, #FF5722);
     background-size: 600% 600%;
     animation: gradientShift 12s ease infinite;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Gradient animation */
-@keyframes gradientShift {
+/* @keyframes gradientShift {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
-}
+} */
 
 /* Main container */
 .container {
     width: 95%;
     max-width: 1200px;
-    margin: 40px auto;
+    margin: 20px auto;
     background: rgba(0,0,0,0.4);
     border-radius: 12px;
     padding: 20px;
@@ -36,7 +33,7 @@ body {
 /* Title */
 h1 {
     margin-bottom: 20px;
-    font-size: 28px;
+    font-size: 2rem;
     color: #fff;
 }
 
@@ -73,3 +70,11 @@ h1 {
 .gallery-card:hover img {
     opacity: 0.9;
 }
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.6rem;
+    }
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
